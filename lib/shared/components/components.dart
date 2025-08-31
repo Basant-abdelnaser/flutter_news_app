@@ -14,12 +14,17 @@ Widget buildArticleItem (item,context){
             width: 120,
             height: 120,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                    image: NetworkImage('${item['urlToImage']}'),
-                    fit: BoxFit.cover
-                )
+              borderRadius: BorderRadius.circular(10),
+              image: item['urlToImage'] != null && item['urlToImage'].toString().isNotEmpty
+                  ? DecorationImage(
+                image: NetworkImage(item['urlToImage']),
+                fit: BoxFit.cover,
+              )
+                  : null, // 👈 لو مفيش صورة، بلاش DecorationImage
             ),
+            child: item['urlToImage'] == null || item['urlToImage'].toString().isEmpty
+                ? Icon(Icons.image_not_supported, size: 40, color: Colors.grey) // 👈 fallback
+                : null,
           ),
           SizedBox(width: 20,),
           Expanded(

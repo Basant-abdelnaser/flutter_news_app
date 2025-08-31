@@ -17,10 +17,7 @@ class NewsCubit extends Cubit<NewStates>{
     return BlocProvider.of(context);
   }
   bool isDark = false;
-  void changeMode(){
-    isDark=!isDark;
-    emit(ChangeModeState());
-  }
+
   void  changeBottomNavBar( index){
     currentIndex=index;
      getSportsData();
