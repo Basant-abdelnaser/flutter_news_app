@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "totalResults": 5,
+  "articles": [
+    {
+      "source": {
+        "id": "rt",
+        "name": "RT"
+      },
+      "author": "RT Arabic",
+      "title": "مايكروسوفت تتخلى عن أحد أشهر تطبيقاتها للهواتف الذكية - RT Arabic",
+      "description": "تخلّت شركة مايكروسوفت عن تطبيق Cortana المخصص للهواتف والأجهزة الذكية العاملة بنظامي iOS وأندرويد.",
+      "url": "https://arabic.rt.com/it/1217792",
+      "urlToImage": "https://cdni.rt.com/media/pics/2021.04/original/606706b64c59b710536597ae.png",
+      "publishedAt": "2021-04-02T19:00:00Z",
+      "content": "Cortana iOS Android ..."
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Masrawy.com"
+      },
+      "author": "مصراوي",
+      "title": "الذهب يعوض خسائره ويرتفع في مصر 15 جنيهًا في يومين - مصراوي",
+      "description": "الذهب يعوض خسائره ويرتفع في مصر 15 جنيهًا في يومين",
+      "url": "https://www.masrawy.com/news/news_economy/details/2021/4/2/1998074",
+      "urlToImage": "https://media.gemini.media/img/large/2021/4/2/2021_4_2_13_42_42_502.jpg",
+      "publishedAt": "2021-04-02T11:43:00Z",
+      "content": "ارتفع سعر الذهب 15 جنيهًا..."
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Investing.com"
+      },
+      "author": "Investing.com",
+      "title": "أسعار الذهب عالميًا: هل يستطيع الذهب الاختراق؟",
+      "description": "تحليل لأسعار الذهب عالميًا",
+      "url": "https://sa.investing.com/news/commodities-news/article-2134243",
+      "urlToImage": "https://i-invdn-com.akamaized.net/news/LYNXMPED180L9_L.jpg",
+      "publishedAt": "2021-04-02T10:32:00Z",
+      "content": "تحليل موجز لحركة الذهب..."
+    },
+    {
+      "source": {
+        "id": "rt",
+        "name": "RT"
+      },
+      "author": "RT Arabic",
+      "title": "سامسونغ تسعى لإحداث نقلة نوعية في عالم الهواتف! - RT Arabic",
+      "description": "تسريبات عن خطط سامسونغ لتغيير سياسات تطوير الهواتف الذكية.",
+      "url": "https://arabic.rt.com/it/1217521",
+      "urlToImage": "https://cdni.rt.com/media/pics/2021.04/original/6065d2064c59b770384fae9f.png",
+      "publishedAt": "2021-04-02T10:00:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Elbashayer.com"
+      },
+      "author": null,
+      "title": "بيع سيارة عمرو أديب المهشمة في مزاد علني بمبلغ ضخم - البشاير",
+      "description": "تداول رواد مواقع التواصل خبر بيع سيارة الإعلامي عمرو أديب.",
+      "url": "https://elbashayer.com/2768344",
+      "urlToImage": "https://elbashayer-com.b-cdn.net/elbashayer/uploads/2021/04/elbashayer-2021-04-02_946307.png",
+      "publishedAt": "2021-04-02T07:09:46Z",
+      "content": "تم بيع السيارة بمبلغ 600 ألف جنيه..."
+    }
+  ]
+}

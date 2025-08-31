@@ -1,9 +1,18 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:news_app/mode_cubit/cubit.dart';
+import 'package:news_app/mode_cubit/state.dart';
+import 'package:news_app/network/remote/dio_helper.dart';
+import 'package:news_app/shared/bloc_observer.dart';
 
 import 'layout/home_layout.dart';
 
 void main() {
+  Bloc.observer= MyBlocObserver();
+  DioHelper.init();
   runApp(const MyApp());
 }
 
@@ -13,21 +22,71 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          // backgroundColor: Colors.black,
-          // iconTheme: IconThemeData(color: Colors.white),
-          // actionsIconTheme: IconThemeData(color: Colors.white),
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.blueAccent
-          )
-        ),
-        scaffoldBackgroundColor: Colors.white,
+    return BlocProvider(
+      create: (BuildContext context) {
+        return AppCubit();
+      },
+      child: BlocConsumer<AppCubit,AppStates>(
+        builder: (BuildContext context, state) {
+          return MaterialApp(
+            key: ValueKey(AppCubit.get(context).isDark),
+            themeMode: AppCubit.get(context).isDark?ThemeMode.dark:ThemeMode.light,
+            darkTheme: ThemeData(
 
-      ),
-      home: HomeLayout(),
-      debugShowCheckedModeBanner: false,
+                scaffoldBackgroundColor: HexColor('333739'),
+                appBarTheme: AppBarTheme(
+                    backgroundColor: HexColor('333739'),
+                    iconTheme: IconThemeData(
+                        color: Colors.white
+                    ),
+                    titleTextStyle:TextStyle(
+                        color: Colors.white
+                    )
+                ),
+                bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                    backgroundColor:  HexColor('333739'),
+                    unselectedItemColor: Colors.white
+                ),
+                textTheme: TextTheme(
+                    headlineSmall: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                    )
+                )
+            ),
+            theme: ThemeData(
+
+                scaffoldBackgroundColor: Colors.white,
+                appBarTheme: AppBarTheme(
+                    backgroundColor: Colors.white,
+                    iconTheme: IconThemeData(
+                        color: Colors.grey
+                    ),
+                    titleTextStyle:TextStyle(
+                        color: Colors.blueAccent
+                    )
+                ),
+                bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                    backgroundColor:  Colors.white,
+                    unselectedItemColor: Colors.grey
+                ),
+                textTheme: TextTheme(
+                    headlineSmall: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                    )
+                )
+            ),
+            home: Directionality(textDirection: TextDirection.ltr,
+                child: HomeLayout()),
+            debugShowCheckedModeBanner: false,
+          );
+        },
+        listener: (BuildContext context, Object? state) {  },
+
+      )
     );
   }
 }
