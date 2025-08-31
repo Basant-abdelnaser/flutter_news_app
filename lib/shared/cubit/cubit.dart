@@ -13,6 +13,7 @@ class NewsCubit extends Cubit<NewStates>{
   List<dynamic>business=[];
   List<dynamic>sports=[];
   List<dynamic>science=[];
+  List<dynamic>searchList=[];
   static NewsCubit get(context){
     return BlocProvider.of(context);
   }
@@ -75,6 +76,25 @@ class NewsCubit extends Cubit<NewStates>{
     }).catchError((error) {
       print("Error in getBusinessData: ${error.toString()}");
       emit(GetScienceErrorState(error.toString()));
+    });
+  }
+  void getSearchedData(String text) {
+    emit(SearchLoadingState());
+     if(text==''){
+       searchList=[];
+     }
+    DioHelper.getData(
+      'v2/everything',
+      {
+        'q': '${text}',
+        'apiKey': '65f7f556ec76449fa7dc7c0069f040ca',
+      },
+    )?.then((value) {
+      searchList = value?.data['articles'];
+      emit(GetSearchSuccessState());
+    }).catchError((error) {
+      print("Error in getBusinessData: ${error.toString()}");
+      emit(GetSearchErrorState(error.toString()));
     });
   }
 

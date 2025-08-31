@@ -22,4 +22,10 @@ class GetScienceErrorState extends NewStates{
   GetScienceErrorState(this.error);
 }
 class ScienceLoadingState extends NewStates{}
-class ChangeModeState extends NewStates{}
+
+class GetSearchSuccessState extends NewStates{}
+class GetSearchErrorState extends NewStates{
+  final String error;
+  GetSearchErrorState(this.error);
+}
+class SearchLoadingState extends NewStates{}
