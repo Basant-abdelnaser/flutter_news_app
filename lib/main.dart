@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
             key: ValueKey(AppCubit.get(context).isDark),
             themeMode: AppCubit.get(context).isDark?ThemeMode.dark:ThemeMode.light,
             darkTheme: ThemeData(
-
                 scaffoldBackgroundColor: HexColor('333739'),
                 appBarTheme: AppBarTheme(
                     backgroundColor: HexColor('333739'),
@@ -64,10 +63,7 @@ class MyApp extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     )
                 ),
-              inputDecorationTheme: InputDecorationTheme(
-                floatingLabelStyle: TextStyle(color: Colors.blueAccent), // label لما يكون focus
-                prefixIconColor: Colors.blueAccent, // icon color لما يكون focus
-              ),
+
             ),
             theme: ThemeData(
 
@@ -92,11 +88,7 @@ class MyApp extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     )
                 ),
-              inputDecorationTheme: InputDecorationTheme(
-                floatingLabelStyle: TextStyle(color: Colors.blueAccent), // label لما يكون focus
-                prefixIconColor: Colors.blueAccent,
-                // icon color لما يكون focus
-              ),
+
             ),
             home: Directionality(
                 textDirection: TextDirection.ltr,

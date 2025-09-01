@@ -22,7 +22,7 @@ class SearchScreen extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-                  controller: searchController,
+                  style: TextStyle(color: Colors.grey),
                   onChanged: (value) {
                     NewsCubit.get(context).getSearchedData(value);
                   },
@@ -32,20 +32,20 @@ class SearchScreen extends StatelessWidget {
                     }
                     return null;
                   },
-                  decoration: InputDecoration(
-                    label: Text('Search'),
-                    prefixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.white, // لون الخلفية العادي
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                  decoration:  InputDecoration(
+                    label: Text('Search', style: TextStyle(color: Colors.grey),),
+                    prefixIcon: Icon(Icons.search_outlined,color: Colors.grey,),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                      borderSide: BorderSide(color: Colors.blueAccent, width: 3.0),
                       borderRadius: BorderRadius.circular(12),
-                    ),
+                    )
+
                   ),
+
                 ),
 
                 ConditionalBuilder(
@@ -60,7 +60,7 @@ class SearchScreen extends StatelessWidget {
                     );
                   },
                   fallback: (BuildContext context) {
-                    return Center(child: CircularProgressIndicator());
+                    return Container();
                   },
 
                 )
